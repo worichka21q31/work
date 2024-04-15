@@ -4,6 +4,7 @@
 #include <string.h>
 #include <cstdlib>
 #include <fstream>
+#include <Windows.h>
 
 using namespace std;
 // Функции...
@@ -42,7 +43,8 @@ double* receoptPriceArr = new double[receoptSize];
 
 int main()
 {
-
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 
 
