@@ -4,7 +4,6 @@
 #include <string.h>
 #include <cstdlib>
 #include <fstream>
-#include <Windows.h>
 
 using namespace std;
 // Функции...
@@ -14,6 +13,7 @@ void SummonmenuLog();
 void Selling();
 void IzmName();
 void AddProduct();
+void DelElemt();
 void AddElem2End();
 void CreateStorage();
 void DeleteProduct();
@@ -43,8 +43,7 @@ double* receoptPriceArr = new double[receoptSize];
 
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+
 	srand(time(NULL));
 
 
@@ -564,7 +563,7 @@ void IzmStorage()
 		}
 		else if(vibor == 2)
 		{
-		    
+		    DelElemt();
 		}
 		else if(vibor == 3)
 		{
@@ -572,5 +571,62 @@ void IzmStorage()
 		}
 		else
 		{
+		    cerr << "Ошибка" ;
 		}
+}
+void DelElemt()
+{
+    int* idArrTemp = new int[siz];
+	string* nameArrTemp = new string[siz];
+	int* countArrTemp = new int[siz];
+	double* PriceArrTemp = new double[siz];
+	
+	for (int i = 0; i < siz; i++)
+	{
+	    idArrTemp[i] = idArr[i];
+		nameArrTemp[i] = nameArr[i];
+		countArrTemp[i] = countArr[i];
+		PriceArrTemp[i] = priceArr[i];
+	}
+	delete[]idArr;
+	delete[]nameArr;
+	delete[]countArr;
+	delete[]priceArr;   
+	
+	siz--;
+	
+	idArr = new int[siz];
+	nameArr = new string[siz];
+	countArr = new int[siz];
+	priceArr = new double[siz];
+	
+	int index = 0;
+	system("cls");
+    cout << "[]======================================================================[]\n\n";
+	cout << "\tКакой Товар Удалить?'\n\tВведите Id: ";
+	cin >> index;
+	for(int i = 0, j = 0 ; i < siz, j < siz; j++, i++)
+	{
+	    if (i == index - 1)
+	    {
+	       i++;
+	       idArr[j] = idArrTemp[j];
+           nameArr[j] = nameArrTemp[i];
+	       countArr[j] = countArrTemp[i];
+	       priceArr[j] = PriceArrTemp[i];
+	       
+	    }
+	    else
+	    {
+	       idArr[j] = idArrTemp[j];
+           nameArr[j] = nameArrTemp[i];
+	       countArr[j] = countArrTemp[i];
+	       priceArr[j] = PriceArrTemp[i]; 
+	    }
+	    
+	    delete[]idArrTemp;
+	    delete[]nameArrTemp;
+	    delete[]countArrTemp;
+	    delete[]PriceArrTemp;
+	}
 }
