@@ -4,7 +4,7 @@
 #include <string.h>
 #include <cstdlib>
 #include <fstream>
-
+#include <Windows.h>
 using namespace std;
 // Функции...
 void Start();
@@ -45,8 +45,8 @@ int main()
 {
 
 	srand(time(NULL));
-
-
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	Start(); 
 
 	Delete();
