@@ -47,7 +47,7 @@ int main()
 	srand(time(NULL));
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	Start(); 
+	Start();
 
 	Delete();
 	return 0;
@@ -249,11 +249,11 @@ void IzmPrise()
 	} while (vibor < 0 || vibor > siz);
 	do
 	{
-	system("cls");
-	cout << "[]======================================================================[]\n\n";
-	cout << "\tВведите цену для " << nameArr[vibor - 1] << " Cейчас ее цена: " << priceArr[vibor - 1] << "\n\tВвод: ";
-	cin >> price;
-	priceArr[vibor - 1] = price;
+		system("cls");
+		cout << "[]======================================================================[]\n\n";
+		cout << "\tВведите цену для " << nameArr[vibor - 1] << " Cейчас ее цена: " << priceArr[vibor - 1] << "\n\tВвод: ";
+		cin >> price;
+		priceArr[vibor - 1] = price;
 	} while (price < 0.01 || price > 200000.02);
 	system("cls");
 	cout << "**************************************************************************\n\n";
@@ -361,16 +361,16 @@ void DeleteProduct()
 	do
 	{
 
-	system("cls");
-	cout << "[]======================================================================[]\n\n";
-	cout << "\tВведите сколько убрать " << nameArr[vibor - 1] << " Cейчас ее: " << countArr[vibor - 1] << "\n\tВвод: ";
-	cin >> count;
-	if (count > countArr[vibor - 1])
-	{
-		cerr << "[]===============================Error==================================[]\n\n";
-		cerr << "\tСтолько кол-ва товара нету в наличии\n\n";
-		system("pause");
-	}
+		system("cls");
+		cout << "[]======================================================================[]\n\n";
+		cout << "\tВведите сколько убрать " << nameArr[vibor - 1] << " Cейчас ее: " << countArr[vibor - 1] << "\n\tВвод: ";
+		cin >> count;
+		if (count > countArr[vibor - 1])
+		{
+			cerr << "[]===============================Error==================================[]\n\n";
+			cerr << "\tСтолько кол-ва товара нету в наличии\n\n";
+			system("pause");
+		}
 	} while (count > countArr[vibor - 1]);
 	countArr[vibor - 1] = countArr[vibor - 1] - count;
 	system("cls");
@@ -393,12 +393,12 @@ void AddProduct()
 	} while (vibor < 0 || vibor > siz);
 	do
 	{
-	    system("cls");
-	    cout << "[]======================================================================[]\n\n";
-	    cout << "\tВведите сколько Добавить " << nameArr[vibor - 1] << " Cейчас ее: " << countArr[vibor - 1] << "\n\tВвод: ";
-	    cin >> count;
-	} while (count < 0 );
-    countArr[vibor - 1] = countArr[vibor - 1] + count;
+		system("cls");
+		cout << "[]======================================================================[]\n\n";
+		cout << "\tВведите сколько Добавить " << nameArr[vibor - 1] << " Cейчас ее: " << countArr[vibor - 1] << "\n\tВвод: ";
+		cin >> count;
+	} while (count < 0);
+	countArr[vibor - 1] = countArr[vibor - 1] + count;
 	system("cls");
 	cout << "**************************************************************************\n\n";
 	cout << "\tОперация Успешна! Товар: " << nameArr[vibor - 1] << " Изменил свое Кол-во на: " << countArr[vibor - 1] << "\n\n";
@@ -420,7 +420,7 @@ void IzmName()
 	} while (vibor < 0 || vibor > siz);
 	system("cls");
 	cout << "[]======================================================================[]\n\n";
-	cout << "\tВведите имя для " << nameArr[vibor - 1]  << "\n\tВвод: ";
+	cout << "\tВведите имя для " << nameArr[vibor - 1] << "\n\tВвод: ";
 
 	cin >> name;
 
@@ -438,7 +438,7 @@ void AddElem2bill(int& receoptSize, int id, int count)
 	string* nameReciptArrTemp = new string[receoptSize];
 	int* countReceiptArrTemp = new int[receoptSize];
 	double* receoptPriceArrTemp = new double[receoptSize];
-	
+
 	for (int i = 0; i < receoptSize; i++)
 	{
 		nameReciptArrTemp[i] = nameReciptArr[i];
@@ -455,13 +455,13 @@ void AddElem2bill(int& receoptSize, int id, int count)
 
 	for (int i = 0; i < receoptSize; i++)
 	{
-		 nameReciptArr[i] = nameReciptArrTemp[i];
-		 countReceiptArr[i] = countReceiptArrTemp[i];
-		 receoptPriceArr[i] = receoptPriceArrTemp[i];
+		nameReciptArr[i] = nameReciptArrTemp[i];
+		countReceiptArr[i] = countReceiptArrTemp[i];
+		receoptPriceArr[i] = receoptPriceArrTemp[i];
 	}
-	nameReciptArr[receoptSize-1] = nameArr[receoptSize-1];
-	countReceiptArr[receoptSize-1] = count;
-	receoptPriceArr[receoptSize-1] = priceArr[receoptSize-1] * count;
+	nameReciptArr[receoptSize - 1] = nameArr[receoptSize - 1];
+	countReceiptArr[receoptSize - 1] = count;
+	receoptPriceArr[receoptSize - 1] = priceArr[receoptSize - 1] * count;
 
 	delete[]nameReciptArrTemp;
 	delete[]countReceiptArrTemp;
@@ -469,14 +469,14 @@ void AddElem2bill(int& receoptSize, int id, int count)
 }
 void AddElem2End()
 {
-    int* idArrTemp = new int[siz];
+	int* idArrTemp = new int[siz];
 	string* nameArrTemp = new string[siz];
 	int* countArrTemp = new int[siz];
 	double* PriceArrTemp = new double[siz];
-	
+
 	for (int i = 0; i < siz; i++)
 	{
-	    idArrTemp[i] = idArr[i];
+		idArrTemp[i] = idArr[i];
 		nameArrTemp[i] = nameArr[i];
 		countArrTemp[i] = countArr[i];
 		PriceArrTemp[i] = priceArr[i];
@@ -493,26 +493,26 @@ void AddElem2End()
 
 	for (int i = 0; i < siz - 1; i++)
 	{
-	     idArr[i] = idArrTemp[i];
-		 nameArr[i] = nameArrTemp[i];
-		 countArr[i] = countArrTemp[i];
-		 priceArr[i] = PriceArrTemp[i];
+		idArr[i] = idArrTemp[i];
+		nameArr[i] = nameArrTemp[i];
+		countArr[i] = countArrTemp[i];
+		priceArr[i] = PriceArrTemp[i];
 	}
-	idArr[siz-1] = siz-1;
-	
-    delete[]idArrTemp;
+	idArr[siz - 1] = siz - 1;
+
+	delete[]idArrTemp;
 	delete[]nameArrTemp;
 	delete[]countArrTemp;
 	delete[]PriceArrTemp;
-	
+
 	system("cls");
 	cout << "[]=============================================================================[]\n";
 	cout << "\n\tВведите имя нового товара: \n\t";
-	cin >> nameArr[siz-1];
+	cin >> nameArr[siz - 1];
 	cout << "\tВведите Кол-во нового товара: \n\t";
-	cin >> countArr[siz-1];
+	cin >> countArr[siz - 1];
 	cout << "\tВведите Цену нового товара: \n\t";
-	cin >> priceArr[siz-1];
+	cin >> priceArr[siz - 1];
 	system("cls");
 	cout << "[]=============================================================================[]\n";
 	cout << "\n\t Товар успешно добавлен!";
@@ -520,15 +520,69 @@ void AddElem2End()
 }
 void PrintBill()
 {
+	int promo;
+	int chose;
+	int firtss = 0;
+	double sumTemp = 0;
+	double sum = 0;
+	
 	system("cls");
 	cout << "[]===============================#Итоговый Чек#=====================================[]\n";
 	cout << "[]\tName\t\tPrise\t\tCount                                       []\n[]——————————————————————————————————————————————————————————————————————————————————[]\n";
 	for (int i = 0; i < receoptSize; i++)
 	{
-		cout << "#"  << "\t" << nameReciptArr[i] << "\t" << receoptPriceArr[i]* countReceiptArr[i] << "\t\t  " << countReceiptArr[i] << "                                          #\n";
+		sum += (receoptPriceArr[i] * countReceiptArr[i]);
+		sumTemp = sum;
+		cout << "#" << "\t" << nameReciptArr[i] << "\t" << receoptPriceArr[i] * countReceiptArr[i] << "\t\t  " << countReceiptArr[i] << "                                          #\n";
 	}
-	cout << "[]==================================================================================[]\n\n";
-	system("pause");
+	if (sum > 1000.02)
+	{
+		sum = sum * 0.94;
+	}
+	while (true)
+	{
+		cout << "[]==================================================================================[]\n\n";
+		system("pause");
+		system("cls");
+		
+		cout << "[]===============================#Итоговый Чек#=====================================[]\n\n";
+		cout << "\tСчет Без Скидок: " << sumTemp << "\n";
+		cout << "\tСчет Cо Скидок: " << sum << "\n";
+		system("pause");
+		if (firtss == 0)
+		{
+			do
+			{
+				if (firtss == 0)
+				{
+					cout << "\tХотите Ввести Промокод?\n1) Нет \n2) Да \n";
+					cin >> chose;
+					firtss = 1;
+				}
+
+			} while (chose < 1 || chose > 3);
+			if (chose == 2)
+			{
+				system("cls");
+				cout << "[]==================================================================================[]\n\n";
+				cout << "\tВведите промокод: " << "\n";
+
+				cin >> promo;
+				if (promo == 81223372)
+				{
+					system("cls");
+					cout << "[]==================================================================================[]\n\n";
+					cout << "\tУспешно!" << "\n";
+					sum = sum * 0.95;
+					system("pause");
+					continue;
+				}
+			}
+			break;
+		}
+		break;
+	}
+	
 }
 void BornNewStorage()
 {
@@ -549,41 +603,41 @@ void BornNewStorage()
 }
 void IzmStorage()
 {
-        int vibor;
-        do
-        {
-  		    system("cls");
-		    cout << "[]======================================================================[]\n\n";
-		    cout << "\tИзменение Склада\n\n\t1) Добавить Товар \n\t2) Удалить Товар\n\t3) Выход\n\nВвод: ";
-		    cin >> vibor;
-		}while(vibor < 1 || vibor > 3);
-		if(vibor == 1)
-		{
-		    AddElem2End();
-		}
-		else if(vibor == 2)
-		{
-		    DelElemt();
-		}
-		else if(vibor == 3)
-		{
-		    
-		}
-		else
-		{
-		    cerr << "Ошибка" ;
-		}
+	int vibor;
+	do
+	{
+		system("cls");
+		cout << "[]======================================================================[]\n\n";
+		cout << "\tИзменение Склада\n\n\t1) Добавить Товар \n\t2) Удалить Товар\n\t3) Выход\n\nВвод: ";
+		cin >> vibor;
+	} while (vibor < 1 || vibor > 3);
+	if (vibor == 1)
+	{
+		AddElem2End();
+	}
+	else if (vibor == 2)
+	{
+		DelElemt();
+	}
+	else if (vibor == 3)
+	{
+
+	}
+	else
+	{
+		cerr << "Ошибка";
+	}
 }
 void DelElemt()
 {
-    int* idArrTemp = new int[siz];
+	int* idArrTemp = new int[siz];
 	string* nameArrTemp = new string[siz];
 	int* countArrTemp = new int[siz];
 	double* PriceArrTemp = new double[siz];
-	
+
 	for (int i = 0; i < siz; i++)
 	{
-	    idArrTemp[i] = idArr[i];
+		idArrTemp[i] = idArr[i];
 		nameArrTemp[i] = nameArr[i];
 		countArrTemp[i] = countArr[i];
 		PriceArrTemp[i] = priceArr[i];
@@ -591,42 +645,42 @@ void DelElemt()
 	delete[]idArr;
 	delete[]nameArr;
 	delete[]countArr;
-	delete[]priceArr;   
-	
+	delete[]priceArr;
+
 	siz--;
-	
+
 	idArr = new int[siz];
 	nameArr = new string[siz];
 	countArr = new int[siz];
 	priceArr = new double[siz];
-	
+
 	int index = 0;
 	system("cls");
-    cout << "[]======================================================================[]\n\n";
+	cout << "[]======================================================================[]\n\n";
 	cout << "\tКакой Товар Удалить?'\n\tВведите Id: ";
 	cin >> index;
-	for(int i = 0, j = 0 ; i < siz, j < siz; j++, i++)
+	for (int i = 0, j = 0; i < siz, j < siz; j++, i++)
 	{
-	    if (i == index - 1)
-	    {
-	       i++;
-	       idArr[j] = idArrTemp[j];
-           nameArr[j] = nameArrTemp[i];
-	       countArr[j] = countArrTemp[i];
-	       priceArr[j] = PriceArrTemp[i];
-	       
-	    }
-	    else
-	    {
-	       idArr[j] = idArrTemp[j];
-           nameArr[j] = nameArrTemp[i];
-	       countArr[j] = countArrTemp[i];
-	       priceArr[j] = PriceArrTemp[i]; 
-	    }
-	    
-	    delete[]idArrTemp;
-	    delete[]nameArrTemp;
-	    delete[]countArrTemp;
-	    delete[]PriceArrTemp;
+		if (i == index - 1)
+		{
+			i++;
+			idArr[j] = idArrTemp[j];
+			nameArr[j] = nameArrTemp[i];
+			countArr[j] = countArrTemp[i];
+			priceArr[j] = PriceArrTemp[i];
+
+		}
+		else
+		{
+			idArr[j] = idArrTemp[j];
+			nameArr[j] = nameArrTemp[i];
+			countArr[j] = countArrTemp[i];
+			priceArr[j] = PriceArrTemp[i];
+		}
+
+		delete[]idArrTemp;
+		delete[]nameArrTemp;
+		delete[]countArrTemp;
+		delete[]PriceArrTemp;
 	}
 }
